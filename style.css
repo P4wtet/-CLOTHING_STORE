@@ -1,0 +1,476 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #22262A;
+    font: 400 15px/22px 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: .3s;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+button {
+    display: block;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+.btn-primary {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #22262A;
+}
+
+.btn-primary:hover {
+    background-color:  #fae779;
+}
+
+/*Header*/
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.header__title {
+    font-size: 28px;
+    line-height: 42px;
+}
+
+.header-nav__item {
+   display: inline-block;
+   font-size: 18px;
+   margin-right: 25px;
+}
+
+.header-nav__item:last-child {
+    margin-right: 0;
+}
+
+.header-user__item {
+    display: inline-block;
+    margin-right: 35px;
+}
+
+.header-user__item:last-child{
+    margin-right: 0;
+}
+
+.header a:hover, 
+.header button:hover {
+    color:   #fae779;
+}
+
+/*Banner*/
+
+.banner-wrap {
+    padding: 350px 0 100px;
+    background: url(images/main_image.jpg) no-repeat;
+    background-size: cover;
+}
+
+.banner {
+   width: 420px;
+   margin-left: auto;
+}
+
+.banner__text {
+    display: block;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.banner__trend {
+    font-size: 70px;
+    line-height: 120px;
+}
+
+.banner-link-wrap {
+    margin-top: 25px;
+}
+
+.banner__link {
+    width: 150px;
+    padding: 10px 25px;
+    margin-right: 35px;
+}
+
+.banner__link:last-child {
+    margin-right: 0;
+}
+
+/*Category*/
+
+.section {
+    padding: 115px 0 0;
+}
+
+/*Делаем галерею используя grid очень легко*/
+/*В grid-template-areas мы создаем сетку как наши изображения будут распологаться*/
+.category {
+    display: grid;
+    grid-template-areas: 
+    "img1 img1 img4 img4" 
+    "img2 img3 img4 img4";
+    gap: 25px;
+}
+
+.category__link {
+    position: relative;
+    min-height: 270px;
+    cursor: pointer;
+}
+
+.category__link:hover::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 /50%);
+}
+
+.category__link:nth-child(1) {
+    grid-area: img1;
+    background: url(images/category-1.jpg) 50% 0%/cover no-repeat;
+}
+
+.category__link:nth-child(2) {
+    grid-area: img2;
+    background: url(images/category-2.jpg) 50% 0%/cover no-repeat;
+}
+
+.category__link:nth-child(3) {
+    grid-area: img3;
+    background: url(images/category-3.jpg) 50% 0%/cover no-repeat;
+}
+
+.category__link:nth-child(4) {
+    grid-area: img4;
+    background: url(images/category-4.jpg) 50% 0%/cover no-repeat;
+}
+
+.category__name {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    padding: 5px 20px;
+    background-color: #fff;
+    font-weight: 500;
+    opacity: 0;
+    font-size: 18px;
+}
+
+.category__link:hover .category__name {
+    opacity: 1;
+}
+
+/*New product*/
+
+.section__title {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.section__subtitle {
+    font-weight: 400;
+    margin-bottom: 65px;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.new-product-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-product {
+    width: 24%;
+}
+
+.new-product__img {
+    margin: 0 0 35px 0;
+}
+
+.new-product__brand {
+    display: block;
+    font-weight: 300;
+}
+
+.new-product__link {
+    display: block;
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.new-product__link:hover {
+    color: #fae779;
+}
+
+.new-product__price_old {
+    text-decoration: line-through;
+    margin: 0 20px 0 0;
+}
+
+.new-product__price_new {
+    color: #CF2929;
+}
+
+/*Style*/
+
+.style {
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+}
+
+.style-left {
+    width: 49%;
+    height: 100%;
+    background: url(./images/gerl1.jpg) 50% 100%/550px no-repeat;
+}
+
+.style-right {
+    position: relative;
+    width: 49%;
+    height: 100%;
+    background: url(./images/Gerl_right.jpg) 0% 0%/515px no-repeat;
+}
+
+.style-right::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    height: 303px;
+    width: 252px;
+    background: #fff url(./images/gerl_right1.jpg) 100% 100%/227px 281px no-repeat;
+}
+
+.style__link{
+    position: absolute;
+    z-index: 2;
+    bottom: 50px;
+    right: 260px;
+}
+
+.style__link::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #22262A;
+    transition: .3s;
+}
+
+.style__link:hover {
+    color: #fae779;
+}
+
+.style__link:hover::after {
+    background-color: #fae779;
+}
+
+/*Collection*/
+
+.collection-wrap {
+    margin-top: 115px;
+    background: url(images/main_gerl_image.jpg) no-repeat;
+    background-size: cover;
+}
+
+.collection {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.collection .banner__link {
+    width: 51%;
+    display: block;
+}
+
+/*Footer*/
+
+.footer-main {
+    padding: 115px 0 105px;
+    background-color:  #F2F8FC;
+
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__title {
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 38px;
+}
+
+.footer__text {
+    margin-bottom: 40px;
+    width: 50%;
+}
+
+.footer__location {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    padding-left: 40px;
+}
+
+.footer__location::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background: url(./logo/location_logo.svg) 50% 50%/100% no-repeat;
+    transform: translateY(-50%);
+}
+
+.footer__email {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.footer__email:hover,
+.footer__tel:hover  {
+    color: #fae779;
+}
+
+.footer__email::after  {
+    position: absolute;
+    content: "";
+    bottom: 5px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+   background-color: #22262A;
+}
+
+.footer__email:hover::after  {
+    background-color: #fae779;
+    transition: .3s;
+}
+
+.footer__tel{
+    display: block;
+    margin-bottom: 15px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social__link svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    transition: .4s;
+}
+
+.social__link:hover svg {
+    fill: #fae779;
+}
+
+.footer-form {
+    display: flex;
+    justify-content: space-between;
+    width: 530px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgb(0 0 0 /7%);
+    border-radius: 5px;
+    margin-bottom: 70px;
+}
+
+.footer-form__input {
+    width: 100%;
+    padding: 10px 25px;
+    border: 1px solid transparent;
+    color: inherit;
+    outline: none;
+    font: inherit;
+}
+
+.footer-form__input:focus {
+    border: 1px solid #22262A;
+}
+
+.footer-form__btn {
+    width: 90px;
+    color: inherit;
+    font-weight: 600;
+}
+
+.footer-form__btn:hover {
+    color: #fff;
+    background-color: #22262A;
+}
+
+.footer-nav-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 25px;
+}
+
+.footer-nav__item {
+    margin-bottom: 20px;
+}
+
+.footer-nav__item:hover {
+    color: #fae779;
+}
+
+.footer-copyright {
+    padding: 35px;
+    text-align: center;
+    background-color:  #E7F5F8;
+}
